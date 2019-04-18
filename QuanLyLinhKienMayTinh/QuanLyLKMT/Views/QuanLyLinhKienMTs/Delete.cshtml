@@ -1,0 +1,128 @@
+﻿@model QuanLyLKMT.QuanLyLinhKienMT
+
+@{
+    ViewBag.Title = "Xóa Sản Phẩm";
+}
+
+<h2 style="color: red; font-weight: bold">Xóa Sản Phẩm.</h2>
+<h3 style="color: yellowgreen; font-weight: bold">Bạn có chắc chắn muốn xóa sản phẩm này?</h3>
+<body style="background-color: cyan"></body>
+
+<div>
+    <h4 style="color: blue; font-weight: bold">Thông tin sản phẩm.</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="color: orange">
+            Loại Linh Kiện:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiLinhKien)
+        </dd>
+
+        <dt style="color: orange">
+            Thương Hiệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThuongHieu)
+        </dd>
+
+        <dt style="color: orange">
+            Tên Linh Kiện:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLinhKien)
+        </dd>
+
+        <dt style="color: orange">
+            Dung Lượng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DungLuong)
+        </dd>
+
+        <dt style="color: orange">
+            Kích Thước:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KichThuoc)
+        </dd>
+
+        <dt style="color: orange">
+            Bus RAM:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusRAM)
+        </dd>
+
+        <dt style="color: orange">
+            Chuẩn Bộ Nhớ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChuanBoNho)
+        </dd>
+
+        <dt style="color: orange">
+            Chipset:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chipset)
+        </dd>
+
+        <dt style="color: orange">
+            Giá Bán:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+        <dt style="color: orange">
+            Tình Trạng Kho:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrangKho)
+        </dd>
+
+        <dt style="color: orange">
+            Thời Hạn Bảo Hành:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiHanBaoHanh)
+        </dd>
+
+        <dt style="color: orange">
+            Ghi Chú:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+
+    </dl>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Xóa Sản Phẩm" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+
+
+<div>
+    @Html.ActionLink("Trở Về Danh Sách", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

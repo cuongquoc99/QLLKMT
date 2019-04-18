@@ -1,0 +1,116 @@
+﻿@model IEnumerable<QuanLyLKMT.QuanLyLinhKienMT>
+
+@{
+    ViewBag.Title = "Quản Lý Thông Tin Sản Phẩm";
+}
+
+<b><h2 style=" text-align: center; color: red; font-weight: bold">THÔNG TIN CÁC SẢN PHẨM.</h2></b>
+<body style="background-color: cyan"></body>
+
+<p>
+    @Html.ActionLink("Tạo Mới", "Create")
+</p>
+<table style="background-color: yellow" id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                Loại Linh Kiện
+            </th>
+            <th>
+                Thương Hiệu
+            </th>
+            <th>
+                Tên Linh Kiện
+            </th>
+            <th>
+                Dung Lượng
+            </th>
+            <th>
+                Kích Thước
+            </th>
+            <th>
+                Bus RAM
+            </th>
+            <th>
+                Chuẩn Bộ Nhớ
+            </th>
+            <th>
+                Chipset
+            </th>
+            <th>
+                Giá Bán
+            </th>
+            <th>
+                Tình Trạng Kho
+            </th>
+            <th>
+                Thời Hạn Bảo Hành
+            </th>
+            <th>
+                Ghi Chú
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.LoaiLinhKien
+                </td>
+                <td>
+                    @item.ThuongHieu
+                </td>
+                <td>
+                    @item.TenLinhKien
+                </td>
+                <td>
+                    @item.DungLuong
+                </td>
+                <td>
+                    @item.KichThuoc
+                </td>
+                <td>
+                    @item.BusRAM
+                </td>
+                <td>
+                    @item.ChuanBoNho
+                </td>
+                <td>
+                    @item.Chipset
+                </td>
+                <td>
+                    @item.GiaBan.ToString("N0")
+                </td>
+                <td>
+                    @item.TinhTrangKho
+                </td>
+                <td>
+                    @item.ThoiHanBaoHanh
+                </td>
+                <td>
+                    @item.GhiChu
+                </td>
+                <td>
+                    @Html.ActionLink("Cập Nhật", "Edit", new { id = item.STT }) |
+                    @Html.ActionLink("Xem", "Details", new { id = item.STT }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.STT })
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>
+
+
+@section Scripts{
+    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}
